@@ -1,0 +1,50 @@
+$('.report-table tbody tr').each(function( index ) {})
+
+$("div").each(function() {
+    // do something exciting with each div
+    $(this).css("border", "1px solid red");
+
+    // do something by directly manipulating the wrapped DOM element
+    this.style.border = "1px solid red";
+
+    // do something only if this particular div has a class of 'pretty'
+    if($(this).hasClass("pretty")) {
+        $(this).text("I am the pretty one");
+    }
+});
+
+var total = 0;
+$('.report-table tbody tr').each(function(){
+console.log($(this).find("td").eq(1).text());
+name = console.log($(this).find("td").eq(1).text());
+val = console.log($(this).find("td").eq(2).text());
+if (name=="FORM_SKU_MAIN") {
+	total += val*1;
+} else if (name=="MORE_PHOTO" || name=="MORE_FOTO") {
+	total += val*0.8;
+} else if (name=="FORM_SKU_OFFER_MAIN") {
+	total += val*0.3;
+} else {
+total += val*0.1;}
+
+})
+
+
+
+
+var total = 0;
+$('.report-table tbody tr').each(function(){
+
+name = $(this).find("td").eq(1).text();
+val = $(this).find("td").eq(2).text();
+if (name=="FORM_SKU_MAIN") {
+	total += val*1;
+} else if (name=="MORE_PHOTO" || name=="MORE_FOTO") {
+	total += val*0.8;
+} else if (name=="FORM_SKU_OFFER_MAIN") {
+	total += val*0.3;
+} else {
+total += val*0.1;}
+
+});
+console.log(total);
